@@ -1,0 +1,12 @@
+
+@mixin if-is-table{
+  @media all and (min-width: #{$table-width}){
+    @content;
+  }
+}
+
+@mixin if-is-phone{
+  @media all and (max-width:#{$phone-width} ){
+    @content;
+  }
+}

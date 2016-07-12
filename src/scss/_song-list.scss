@@ -4,21 +4,44 @@
 //styles
 
 .song-list{
+  @include if-is-table{
+    display: flex;
+    flex-wrap: wrap;
+
+  }
   .song{
     @extend .clearfix;
     border-bottom: 1px solid $color-grey;
+    @include if-is-table{
+      background: gold;
+      width: calc(20% - 20px);
+      text-align: center;
+      padding: 10px;
+    }
+    @include if-is-phone{
+      background-color: #00DD00;
+    }
     .cover{
       width: 60px;
       float: left;
       border: 1px solid;
       margin-right: 10px;
+      @include if-is-table{
+        width: 100%;
+        margin-bottom: 10px;
+      }
     }
     .artist{
         margin-top: 15px;
         font-weight: bold;
     }
-    .title{
-
+    .artist, .title{
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      height: 16px;
+      padding-right: 20px;
     }
   }
 

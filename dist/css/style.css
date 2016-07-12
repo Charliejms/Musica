@@ -66,16 +66,41 @@ table {
     font-size: 19px;
     text-shadow: 2px 2px 0px #359777; }
 
+@media all and (min-width: 737px) {
+  .song-list {
+    display: flex;
+    flex-wrap: wrap; } }
+
 .song-list .song {
   border-bottom: 1px solid #EBEDEA; }
+  @media all and (min-width: 737px) {
+    .song-list .song {
+      background: gold;
+      width: calc(20% - 20px);
+      text-align: center;
+      padding: 10px; } }
+  @media all and (max-width: 736px) {
+    .song-list .song {
+      background-color: #00DD00; } }
   .song-list .song .cover {
     width: 60px;
     float: left;
     border: 1px solid;
     margin-right: 10px; }
+    @media all and (min-width: 737px) {
+      .song-list .song .cover {
+        width: 100%;
+        margin-bottom: 10px; } }
   .song-list .song .artist {
     margin-top: 15px;
     font-weight: bold; }
+  .song-list .song .artist, .song-list .song .title {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 16px;
+    padding-right: 20px; }
 
 body {
   background: #FFFFFF;
@@ -86,3 +111,33 @@ body {
 
 img, embed, object, video {
   max-width: 100%; }
+
+form {
+  padding: 10px; }
+
+label, input, button, button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box; }
+
+label {
+  font-size: 14px -6px;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+input, button {
+  border: 1px solid #8ED7BF;
+  margin: 5px 0px 15px 0px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px; }
+
+button {
+  background-color: #8ED7BF;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #1b4b3b;
+  transition: all 0.25s; }
+  button:active {
+    background: #1b4b3b;
+    color: #FFFFFF; }
