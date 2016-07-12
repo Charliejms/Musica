@@ -1,0 +1,31 @@
+$main-font-family:'Open Sans', sans-serif;
+$title-font-family: $main-font-family;
+$body-font-family: $main-font-family;
+
+//Font sizes:
+
+$font-size-base: 14px;
+$font-size-small: $font-size-base -6px;
+$font-size-large: $font-size-base +6px;
+
+$font-size-h1: $font-size-base 15px;
+$font-size-h2: $font-size-base 12px;
+$font-size-h3: $font-size-base 9px;
+$font-size-h4: $font-size-base 6px;
+$font-size-h5: $font-size-base 3px;
+$font-size-h6: $font-size-base;
+
+
+// Colors
+
+$color-write: #FFFFFF;
+$color-black:#333;
+$color-grey: #EBEDEA;
+$color-sirena: #8ED7BF;
+$color-ivoty-isn:#FCF3CE;
+$color-pastel-orange: #F9BB96;
+
+//componetes colors
+$main-text-color:$color-black;
+$body-background-color:$color-write;
+

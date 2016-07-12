@@ -1,0 +1,13 @@
+
+body{
+  background: $body-background-color;
+  color: $main-text-color;
+  font-family: $main-font-family;
+  font-size:$font-size-base;
+  padding-top: 50px;
+}
+
+//imagenes, videos y objetos resposive
+img, embed, object, video{
+  max-width: 100%;
+}
