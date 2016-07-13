@@ -16,7 +16,18 @@ img, embed, object, video{
 //Form
 
 form{
+  display: flex;
+  flex-wrap: wrap;
   padding: 10px;
+  .form-row{
+    padding: 10px;
+    @include if-is-phone{
+      width: calc(100% - 20px);
+    }
+    @include if-is-table{
+      width: calc(50% - 20px);
+    }
+  }
 }
 label, input, button{
   display: block;
@@ -31,7 +42,7 @@ label{
 
 input{
   border: 1px solid $color-sirena;
-  margin: 5px 0px 15px 0px;
+  margin: 5px 0px 5px 0px;
   padding: 10px;
   font-size: $font-size-base;
   border-radius: 5px;

@@ -12,18 +12,22 @@
         <h1 class="web-title"> MusicApp</h1>
     </header>
     <form>
-        <label for="artist">Artista</label>
-        <input type="text" name="artist" id="artist" placeholder="Artista" required>
-
-        <label for="title">Titulo</label>
-        <input type="text" name="title" id="title" placeholder="Titulo" required>
-
-        <label for="audio_url">Audio URL</label>
-        <input type="url" name="audio_url" id="audio_url" placeholder="http://...." required>
-
-        <label for="cover_url">Titulo</label>
-        <input type="url" name="cover_url" id="cover_url" placeholder="http://....">
-
+        <div class="form-row">
+            <label for="artist">Artista</label>
+            <input type="text" name="artist" id="artist" placeholder="Artista" required>
+        </div>
+        <div class="form-row">
+            <label for="title">Titulo</label>
+            <input type="text" name="title" id="title" placeholder="Titulo" required>
+        </div>
+        <div class="form-row">
+            <label for="audio_url">Audio URL</label>
+            <input type="url" name="audio_url" id="audio_url" placeholder="http://...." required>
+        </div>
+        <div class="form-row">
+            <label for="cover_url">Cover</label>
+            <input type="url" name="cover_url" id="cover_url" placeholder="http://....">
+        </div>
         <button> Save Song</button>
     </form>
 <section class="song-list">

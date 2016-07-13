@@ -113,7 +113,17 @@ img, embed, object, video {
   max-width: 100%; }
 
 form {
+  display: flex;
+  flex-wrap: wrap;
   padding: 10px; }
+  form .form-row {
+    padding: 10px; }
+    @media all and (max-width: 736px) {
+      form .form-row {
+        width: calc(100% - 20px); } }
+    @media all and (min-width: 737px) {
+      form .form-row {
+        width: calc(50% - 20px); } }
 
 label, input, button, button {
   display: block;
@@ -127,7 +137,7 @@ label {
 
 input, button {
   border: 1px solid #8ED7BF;
-  margin: 5px 0px 15px 0px;
+  margin: 5px 0px 5px 0px;
   padding: 10px;
   font-size: 14px;
   border-radius: 5px; }
