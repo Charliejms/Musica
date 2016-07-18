@@ -1,0 +1,28 @@
+body{
+
+  .ui-element{
+    display: none;
+  }
+
+  //muestra el formulario
+  &.form-shown{
+    .new-song-form {
+      display: flex;
+    }
+    @include if-is-table{
+      .song-list{
+          display: flex;
+        }
+    }
+  }
+
+
+
+  //muestra el listado de canciones
+  &.songs-list-shown .song-list{
+    display: block;
+    @include if-is-table{
+      display: flex;
+    }
+  }
+}

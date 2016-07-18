@@ -15,20 +15,32 @@ img, embed, object, video{
 
 //Form
 
-form{
-  display: flex;
-  flex-wrap: wrap;
+// Forms
+form {
   padding: 10px;
-  .form-row{
-    padding: 10px;
-    @include if-is-phone{
-      width: calc(100% - 20px);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $color-write;
+  position: absolute;
+  width: calc(100% - 20px);
+  top: 0px;
+  @include if-is-table {
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .form-row {
+      width: calc(50% - 10px);
+      margin: auto 5px;
     }
-    @include if-is-table{
-      width: calc(50% - 20px);
+    button {
+      width: 20%
     }
   }
 }
+
 label, input, button{
   display: block;
   width: 100%;

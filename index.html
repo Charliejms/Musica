@@ -7,11 +7,12 @@
            <link rel="stylesheet" type="text/css" href="dist/css/style.css">
     <title>MusicApp</title>
 </head>
-<body>
+<body class="form-shown">
     <header class="web-header">
+        <img class="add-icon" src="dist/img/icon-add.png" alt="Add Song">
         <h1 class="web-title"> MusicApp</h1>
     </header>
-    <form>
+    <form class="ui-element new-song-form" novalidate>
         <div class="form-row">
             <label for="artist">Artista</label>
             <input type="text" name="artist" id="artist" placeholder="Artista" required>
@@ -30,7 +31,7 @@
         </div>
         <button> Save Song</button>
     </form>
-<section class="song-list">
+<section class="ui-element song-list">
     <article class="song">
         <img  class="cover" src="http://music-plaza.yolasite.com/resources/1380626424_CD-Music.png" alt="">
         <div class="artist"> Artista</div>
@@ -79,13 +80,9 @@
     <article class="song">
         <img  class="cover" src="http://music-plaza.yolasite.com/resources/1380626424_CD-Music.png" alt="">
         <div class="artist"> Artista</div>
-        <div class="title"> Titulo </div>
+        <div class="title"> Titulo 66 </div>
     </article>
-    <article class="song"> Song 2</article>
-    <article class="song"> Song 3</article>
-    <article class="song"> Song 4</article>
-    <article class="song"> Song 5</article>
 </section>
-
 </body>
+<script src="dist/js/app.js"></script>
 </html>

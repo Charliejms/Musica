@@ -1,15 +1,8 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,700';
-.clearfix:before, .song-list .song:before, .clearfix:after, .song-list .song:after {
-  content: " ";
-  display: table; }
-
-.clearfix:after, .song-list .song:after {
-  clear: both; }
-
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,700';
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -53,54 +46,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.web-header {
-  top: 0%;
-  left: 0px;
-  position: fixed;
-  width: 100%;
-  padding: 15px 0px;
-  background: rgba(142, 215, 191, 0.9);
-  color: #FFFFFF;
-  text-align: center; }
-  .web-header .web-title {
-    font-size: 19px;
-    text-shadow: 2px 2px 0px #359777; }
+.clearfix:before, .song-list .song:before, .clearfix:after, .song-list .song:after {
+  content: " ";
+  display: table; }
 
-@media all and (min-width: 737px) {
-  .song-list {
-    display: flex;
-    flex-wrap: wrap; } }
-
-.song-list .song {
-  border-bottom: 1px solid #EBEDEA; }
-  @media all and (min-width: 737px) {
-    .song-list .song {
-      background: gold;
-      width: calc(20% - 20px);
-      text-align: center;
-      padding: 10px; } }
-  @media all and (max-width: 736px) {
-    .song-list .song {
-      background-color: #00DD00; } }
-  .song-list .song .cover {
-    width: 60px;
-    float: left;
-    border: 1px solid;
-    margin-right: 10px; }
-    @media all and (min-width: 737px) {
-      .song-list .song .cover {
-        width: 100%;
-        margin-bottom: 10px; } }
-  .song-list .song .artist {
-    margin-top: 15px;
-    font-weight: bold; }
-  .song-list .song .artist, .song-list .song .title {
-    display: block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    height: 16px;
-    padding-right: 20px; }
+.clearfix:after, .song-list .song:after {
+  clear: both; }
 
 body {
   background: #FFFFFF;
@@ -113,17 +64,26 @@ img, embed, object, video {
   max-width: 100%; }
 
 form {
+  padding: 10px;
+  height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  padding: 10px; }
-  form .form-row {
-    padding: 10px; }
-    @media all and (max-width: 736px) {
+  flex-direction: column;
+  justify-content: center;
+  background: #FFFFFF;
+  position: absolute;
+  width: calc(100% - 20px);
+  top: 0px; }
+  @media all and (min-width: 737px) {
+    form {
+      height: auto;
+      position: relative;
+      flex-direction: row;
+      flex-wrap: wrap; }
       form .form-row {
-        width: calc(100% - 20px); } }
-    @media all and (min-width: 737px) {
-      form .form-row {
-        width: calc(50% - 20px); } }
+        width: calc(50% - 10px);
+        margin: auto 5px; }
+      form button {
+        width: 20%; } }
 
 label, input, button, button {
   display: block;
@@ -151,3 +111,69 @@ button {
   button:active {
     background: #1b4b3b;
     color: #FFFFFF; }
+
+.web-header {
+  z-index: 99;
+  top: 0%;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+  padding: 15px 0px;
+  background: rgba(142, 215, 191, 0.9);
+  color: #FFFFFF;
+  text-align: center; }
+  .web-header .web-title {
+    font-size: 19px;
+    text-shadow: 2px 2px 0px #359777; }
+
+@media all and (min-width: 737px) {
+  .song-list {
+    display: flex;
+    flex-wrap: wrap; } }
+
+.song-list .song {
+  border-bottom: 1px solid #EBEDEA;
+  /* @include if-is-phone{
+      background-color: #00DD00;
+    }*/ }
+  @media all and (min-width: 737px) {
+    .song-list .song {
+      box-sizing: border-box;
+      background: gold;
+      width: 20%;
+      text-align: center;
+      padding: 10px; } }
+  .song-list .song .cover {
+    width: 60px;
+    float: left;
+    margin-right: 10px; }
+    @media all and (min-width: 737px) {
+      .song-list .song .cover {
+        width: 100%;
+        margin-bottom: 10px; } }
+  .song-list .song .artist {
+    margin-top: 15px;
+    font-weight: bold; }
+  .song-list .song .artist, .song-list .song .title {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 16px;
+    padding-right: 20px; }
+
+body .ui-element {
+  display: none; }
+
+body.form-shown .new-song-form {
+  display: flex; }
+
+@media all and (min-width: 737px) {
+  body.form-shown .song-list {
+    display: flex; } }
+
+body.songs-list-shown .song-list {
+  display: block; }
+  @media all and (min-width: 737px) {
+    body.songs-list-shown .song-list {
+      display: flex; } }
