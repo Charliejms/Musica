@@ -4,10 +4,16 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var notify = require('gulp-notify')
 var browserSync = require('browser-sync').create();
+var concat = require('gulp-concat');
+var browserify = require("browserify");
+var tap = require("gulp-tap");
+var buffer = require("gulp-buffer");
 
+
+//variables de patrones de archivos
+var jsFiles = ["src/js/*.js","src/js/**/*.js"];
 //tarea por defecto
-
-gulp.task("default",["compile-sass"],function(){
+gulp.task("default",["concat-js","compile-sass"],function(){
 
     //iniciar BrowserSync
     browserSync.init({
@@ -18,6 +24,8 @@ gulp.task("default",["compile-sass"],function(){
 	gulp.watch("src/scss/*.scss",["compile-sass"]);
     //observa los cambios realizados en el HTML y recarga el navegador
     gulp.watch("*html").on("change",browserSync.reload);
+
+    gulp.watch(jsFiles,["concat-js"]);
 
 });
 
@@ -39,5 +47,15 @@ gulp.task("compile-sass",function(){
 });
 
 
-
+// definimos la tarea para concatenar JS
+gulp.task("concat-js", function(){
+    gulp.src(jsFiles)
+        .pipe(concat("app.js"))
+        .pipe(gulp.dest("dist/js/"))
+        .pipe(notify({
+            title: "JS",
+            message: "Concatenate!!"
+        }))
+        .pipe(browserSync.stream());
+});
 

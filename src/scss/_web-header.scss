@@ -5,6 +5,7 @@ $web-header-color: $color-write;
 
 
 .web-header{
+  z-index: 99;
   top: 0%;left: 0px;
   position: fixed;
   width: 100%;
