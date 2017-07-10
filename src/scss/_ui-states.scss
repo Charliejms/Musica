@@ -19,10 +19,11 @@ body{
 
 
   //muestra el listado de canciones
-  &.songs-list-shown .song-list{
-    display: block;
-    @include if-is-table{
+  &.songs-list-shown
+    .song-list{
+      display: block;
+      @include if-is-table{
       display: flex;
-    }
+      }
   }
 }

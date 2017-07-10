@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,700';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,800';
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -125,6 +125,16 @@ button {
   .web-header .web-title {
     font-size: 19px;
     text-shadow: 2px 2px 0px #359777; }
+  .web-header .add-icon {
+    float: right;
+    margin-right: 10px;
+    transition: transform 0.25s;
+    cursor: pointer; }
+  .web-header .add-menu {
+    float: left;
+    margin-left: 10px;
+    transition: transform 0.25s;
+    cursor: pointer; }
 
 @media all and (min-width: 737px) {
   .song-list {
